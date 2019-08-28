@@ -1,0 +1,9 @@
+---
+- hosts: appservers
+  remote_user: ubuntu
+  gather_facts: false
+  become: true
+
+  roles:
+  - appservers
+

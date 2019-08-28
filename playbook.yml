@@ -2,11 +2,12 @@
 - hosts: appserver
   tasks:
   - name: install dbserver
-    apt: name=mariadb-server state=latest
+    apt: name={{package_name}} state=latest
   - name: ensure dbserver is running
-    service: name=mysql state=running
+    service: name={{service_name}} state=running
 
-- hosts: webserver
-  roles:
-  - webserver
-  - firewall   
+
+    #- hosts: webserver
+    #  roles:
+    #  - webserver
+    # - firewall   
